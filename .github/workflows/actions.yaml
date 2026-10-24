@@ -15,4 +15,5 @@ jobs:
       - name: Build the Docker image
         run: |
           docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-          docker build . --file Dockerfile --tag ghcr.io/mbenaibei/ghcr-lab-alpine:$(date %s)
+          docker build . --file Dockerfile --tag ghcr.io/mbenaibei/ghcr-lab-alpine:latest
+          docker push ghcr.io/mbenaibei/ghcr-lab-alpine:latest
